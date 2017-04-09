@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>The small dungeon</title>
+<script src="game.js"></script>
+<link  rel="stylesheet" href="game.css">
+</head>
+<body onload="runGame()">
+<center>
+<h1><span id="header"></span></h1>
+<div id="image" >
+
+</div>
+<div id="text">
+<span id="textbox"></span>
+</div>
+<div id="buttons">
+<button type="button" id="search" onclick="goSearch()">Search</button>
+<button type="button" id="take" onclick="goTake()">Take</button>
+<button type="button" id="talk" onclick="goTalk()">Talk</button>
+<button type="button" id="equip" onclick="goEquip()">Equip</button>
+<button type="button" id="attack" onclick="goAttack()">Attack</button>
+<button type="button" id="forward" onclick="goForward()">Forward</button>
+</div>
+<div id="hpSpace">
+<h3>Health Points - <span id="hpText"></span></h3>
+</div>
+<div id="weaponSpace">
+<h3>Weapon - <span id="weaponText"></span></h3>
+</div>
+<div id="inventorySpace">
+<p>Inventory - <span id="inventoryText"></span></p>
+</div>
+
+
+</body>
+</html>

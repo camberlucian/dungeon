@@ -1,0 +1,11 @@
+#image {
+	width: 50%;
+	height: 400px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100% ;
+}
+
+#text{
+	padding:30px;
+}
