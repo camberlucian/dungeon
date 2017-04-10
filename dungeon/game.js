@@ -46,6 +46,35 @@ var goblin={
 
 
 //These Objects are inanimate objects in the game. You can search and take them
+var dagger ={
+	attackValue: 5,
+	equippable: true,
+	Search: function(){alert("Its a small dagger");},
+	Take: function(){
+	alert("you take the dagger");
+	for(i=0; i < room.takeables.length; i++){
+		if(room.takeables[i] == takeFocus){
+			room.takeables.splice(i,1);
+			inventory.push("dagger");
+			inventoryAsString = inventory.join(", ");
+			document.getElementById("inventoryText").innerText=inventoryAsString;
+		}
+	}
+	},
+	Equip: function(){
+		if(weaponHand == "dagger"){
+			alert("This is already equipped.");
+		}else{
+			alert("You equip the dagger.");
+			weaponHand="dagger";
+			attackPower = 5;
+			document.getElementById("weaponText").innerText="dagger";
+		}
+
+	}
+
+};
+
 var key={
 	Take: function(){
 	alert("you take the key");
@@ -84,6 +113,7 @@ var torch = {
 		if(weaponHand == "torch"){
 			alert("This is already equipped.");
 		}else{
+			alert("You equip the torch.");
 			weaponHand="torch";
 			attackPower = 3;
 			document.getElementById("weaponText").innerText="Torch";
@@ -107,7 +137,7 @@ var gate = {
 // These Objects are rooms in the dungeon
 var theGate={
 	searchables: ["torch", "torches", "gate", "goblin"],
-	takeables: ["torch"],
+	takeables: ["torch", "dagger"],
 	talkables: ["goblin"],
 	attackables: ["goblin"],
 	roomHeader: "At the locked Gate",
